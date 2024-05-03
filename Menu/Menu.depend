@@ -169,7 +169,7 @@
 	"maestros.h"
 	"Registro.h"
 
-1713122806 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\src\maestros.cpp
+1714168562 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\src\maestros.cpp
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -187,7 +187,7 @@
 	<iomanip>
 	<string>
 
-1713122806 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\src\registro.cpp
+1714166776 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\src\registro.cpp
 	"Registro.h"
 	<iostream>
 	<fstream>
@@ -195,10 +195,10 @@
 	<cstdlib>
 	<conio.h>
 	<iomanip>
-	<persona.h>
+	<alumnos.h>
 	<maestros.h>
 
-1713122806 d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\include\registro.h
+1714166776 d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\include\registro.h
 
 1713122806 d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\include\persona.h
 	<iostream>
@@ -208,7 +208,7 @@
 	<conio.h>
 	<iomanip>
 
-1713122806 d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\include\maestros.h
+1714166776 d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\include\maestros.h
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -216,13 +216,11 @@
 	<conio.h>
 	<iomanip>
 
-1713124081 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\main.cpp
+1714170717 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\main.cpp
 	<iostream>
-	"persona.h"
+	"alumnos.h"
 	"maestros.h"
 	"Registro.h"
-	"menunotas.h"
-	"menucursos.h"
 
 1713123178 d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\include\menunotas.h
 
@@ -536,4 +534,21 @@
 	<iomanip>
 	<alumnos.h>
 	<maestros.h>
+
+1714166776 d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\include\alumnos.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1714167326 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu\src\alumnos.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<string>
 
