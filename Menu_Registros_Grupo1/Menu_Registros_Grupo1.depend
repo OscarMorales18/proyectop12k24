@@ -74,3 +74,54 @@
 	<iomanip>
 	<string>
 
+1714784712 source:d:\umg\programacion l\proyecto final\proyectop12k24\menu_registros_grupo1\main.cpp
+	<iostream>
+	"Registro.h"
+
+1714784712 d:\umg\programacion l\proyecto final\proyectop12k24\menu_registros_grupo1\include\registro.h
+
+1714784712 source:d:\umg\programacion l\proyecto final\proyectop12k24\menu_registros_grupo1\src\maestros.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<string>
+
+1714785349 source:d:\umg\programacion l\proyecto final\proyectop12k24\menu_registros_grupo1\src\registro.cpp
+	"Registro.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<maestros.h>
+	<alumnos.h>
+
+1714784712 d:\umg\programacion l\proyecto final\proyectop12k24\menu_registros_grupo1\include\maestros.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1714785351 source:d:\umg\programacion l\proyecto final\proyectop12k24\menu_registros_grupo1\src\alumnos.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<string>
+
+1714785340 d:\umg\programacion l\proyecto final\proyectop12k24\menu_registros_grupo1\include\alumnos.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
