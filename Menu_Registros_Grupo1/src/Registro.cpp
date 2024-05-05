@@ -1,11 +1,12 @@
 #include "Registro.h"
-#include<iostream>
-#include<fstream>
-#include<stdlib.h>
-#include<cstdlib>
-#include<conio.h>
-#include<iomanip>
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <cstdlib>
+#include <conio.h>
+#include <iomanip>
 #include <maestros.h>
+#include <alumnos.h>
 
 using namespace std;
 
@@ -33,7 +34,8 @@ void Registro::menuR()
 
     if (elec==1)
     {
-
+        alumnos alumnos;
+        alumnos.menu();
     }
     else if (elec==2)
     {
