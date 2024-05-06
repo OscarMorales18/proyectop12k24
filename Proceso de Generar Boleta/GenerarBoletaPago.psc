@@ -1,0 +1,63 @@
+Algoritmo GenerarBoletaPago
+	Definir nombre, apellido Como Cadena;
+	Definir codigo, tipoEstudiante Como Entero;
+	Definir montoPago, montoInscripcion Como Real;
+	Definir descuento, montoTotal, montoTotalInscripcion Como Real;
+	Escribir 'Ingrese el nombre del estudiante:';
+	Leer nombre;
+	Escribir 'Ingrese el apellido del estudiante:';
+	Leer apellido;
+	Escribir 'Ingrese el código del estudiante:';
+	Leer codigo;
+	Escribir 'Seleccione el tipo de estudiante:';
+	Escribir '1. Nuevo ingreso';
+	Escribir '2. Reingreso';
+	Leer tipoEstudiante;
+	Si tipoEstudiante=1 Entonces
+		Escribir 'Ingrese el monto de la mensualidad:';
+		Leer montoPago;
+		Escribir 'Ingrese el monto de la inscripción:';
+		Leer montoInscripcion;
+		montoTotal <- montoPago;
+		montoTotalInscripcion <- montoInscripcion;
+		Escribir '********************************************************************************';
+		Escribir '*                BOLETA DE PAGO - MENSUALIDAD                                  *';
+		Escribir '* Nombre: ', nombre;
+		Escribir '* Apellido: ', apellido;
+		Escribir '* Código: ', codigo;
+		Escribir '* Tipo de estudiante: Nuevo ingreso';
+		Escribir '* Monto a pagar (mensualidad): Q', montoPago;
+		Escribir '********************************************************************************';
+		Escribir '********************************************************************************';
+		Escribir '*                BOLETA DE PAGO - INSCRIPCIÓN                                  *';
+		Escribir '* Nombre: ', nombre;
+		Escribir '* Apellido: ', apellido;
+		Escribir '* Código: ', codigo;
+		Escribir '* Tipo de estudiante: Nuevo ingreso';
+		Escribir '* Monto a pagar (inscripción): Q', montoInscripcion;
+		Escribir '********************************************************************************';
+	SiNo
+		Escribir 'Ingrese el monto a pagar:';
+		Leer montoPago;
+		descuento <- montoPago*0.1;
+		montoTotal <- montoPago-descuento;
+		Escribir '********************************************************************************';
+		Escribir '*                BOLETA DE PAGO - REINGRESO                                    *';
+		Escribir '* Nombre: ', nombre;
+		Escribir '* Apellido: ', apellido;
+		Escribir '* Código: ', codigo;
+		Escribir '* Tipo de estudiante: Reingreso';
+		Escribir '* Monto a pagar: Q', montoPago;
+		Escribir '* Descuento (si se realiza un solo pago del semestre completo): Q', descuento;
+		Escribir '* Monto total a pagar: Q', montoTotal;
+		Escribir '********************************************************************************';
+		Escribir '********************************************************************************';
+		Escribir '*                BOLETA DE PAGO - INSCRIPCIÓN                                  *';
+		Escribir '* Nombre: ', nombre;
+		Escribir '* Apellido: ', apellido;
+		Escribir '* Código: ', codigo;
+		Escribir '* Tipo de estudiante: Nuevo ingreso';
+		Escribir '* Monto a pagar (inscripción): Q', montoInscripcion;
+		Escribir '********************************************************************************';
+	FinSi
+FinAlgoritmo
