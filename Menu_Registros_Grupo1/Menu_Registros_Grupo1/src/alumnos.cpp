@@ -6,10 +6,7 @@
 #include<iomanip>
 #include<string>
 
-
 using namespace std;
-
-// Creado por Andy Garcia 9959-23-1494
 
 class alumnos
 {
@@ -212,12 +209,11 @@ void alumnos::menu()
 		cout<<"|            1. Agregar Estudiante              |"<<endl;
 		cout<<"|            2. Mostrar Estudiante              |"<<endl;
 		cout<<"|            3. Modificar Estudiante            |"<<endl;
-		cout<<"|            4. Buscar Estudiante               |"<<endl;
-		cout<<"|            5. Borrar Estudiante               |"<<endl;
-		cout<<"|            6. Salir del programa              |"<<endl;
-		cout<<"|            7. Regresar al menu                |"<<endl;
+		cout<<"|            4. Borrar Estudiante               |"<<endl;
+		cout<<"|            5. Salir del programa              |"<<endl;
+		cout<<"|            6. Regresar al menu                |"<<endl;
 		cout<<"+-----------------------------------------------+"<<endl;
-		cout<<"|        Ingrese su opcion [1/2/3/4/5/6/7]      |"<<endl;
+		cout<<"|         Ingrese su opcion [1/2/3/4/5/6]       |"<<endl;
 		cout<<"+-----------------------------------------------+"<<endl;
 		cin>>opcion;
 
@@ -238,21 +234,18 @@ void alumnos::menu()
 				modificar();
 				break;
 			case 4:
-				buscar();
+			    borrar();
 				break;
 			case 5:
-				borrar();
-				break;
-			case 6:
 				exit(0);
 				break;
-            case 7:
+			case 6:
 				break;
 			default:
 				cout<<"ERROR, OPCION NO VALIDA, INTENTELO DE NUEVO PORFAVOR";
 		}
 		getch();
-    }while(opcion != 7);
+    }while(opcion != 6);
 }
 void alumnos::insertar()
 {
@@ -317,8 +310,6 @@ void alumnos::insertar()
     archivo.close();
 }
 
-
-
 void alumnos::desplegar() {
     system("cls");
 
@@ -352,164 +343,116 @@ void alumnos::desplegar() {
     cin.get();
 }
 
-
 void alumnos::modificar()
 {
 	system("cls");
-	fstream archivo, archivoTemporal;
-	string idPersona;
-	int encontrado=0;
-    cout<<"+---------------------------------------------------------------------------------+"<<endl;
-	cout<<"+                       Modificar Detalles del estudiante                         +"<<endl;
-    cout<<"+---------------------------------------------------------------------------------+"<<endl;
+    fstream archivo;
+    string idPersona;
+    bool encontrado = false;
 
-	archivo.open("RegistroAlumnos.txt",ios::in);
-	if(!archivo)
-	{
-		cout<<"Error, no se encuentra informacion...";
-		archivo.close();
-	}
-	else
-	{
-		cout<<"-> Ingrese el ID de la persona que desea modificar: ";
-		cin>>idPersona;
-    cout<<"+---------------------------------------------------------------------------------+"<<endl;
-		archivoTemporal.open("Temporal.txt",ios::app | ios::out);
-		archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		while(!archivo.eof())
-		{
-			if(idPersona != id)
-			{
-				archivoTemporal<<left<<setw(15)<<id<<left<<setw(15)<<nombre<<left<<setw(15)<<Genero<<left<<setw(15)<<DPI<<left<<setw(15)<< nacionalidad<<left<<setw(15)<<direccion<<left<<setw(15)<<telefono<<left<<setw(15)<<civil<<left<<setw(15)<<fechanaci<<left<<setw(15)<<anoingre<<"\n";
-			}
-			else
-			{
-				cout<<" -> Ingrese el nuevo ID del estudiante: ";
-				cin>>id;
-				cout<<" -> Ingrese el nuevo nombre del estudiante: ";
-				cin>>nombre;
-				cout<<" -> Ingrese el nuevo Genero del estudiante: ";
-				cin>>Genero;
-				cout<<" -> Ingrese la nueva DPI del estudiante: ";
-				cin>>DPI;
-				cout<<" -> Ingrese la nueva nacionalidad del estudiante: ";
-                cin >>nacionalidad;
-				cout<<" -> Ingrese la nueva direccion del estudiante: ";
-				cin>>direccion;
-				cout<<" -> Ingrese el nuevo Telefono del estuantes: ";
-				cin>>telefono;
-				cout<<" -> Ingrese el nuevo estado civil del estudiante: ";
-                cin >> civil;
-                cout<<" -> Ingrese la nueva fecha de nacimiento del estudiante: ";
-                cin >> fechanaci;
-                cout<<" -> Ingrese el nuevo ano de ingreso del estudiante: ";
-                cin >> anoingre;
-    cout<<"+---------------------------------------------------------------------------------+"<<endl;
+    cout << "+---------------------------------------------------------------------------------+" << endl;
+    cout << "+                       Modificar Detalles del estudiante                         +" << endl;
+    cout << "+---------------------------------------------------------------------------------+" << endl;
 
-				archivoTemporal<<left<<setw(15)<<id<<left<<setw(15)<<nombre<<left<<setw(15)<<Genero<<left<<setw(15)<<DPI<<left<<setw(15)<< nacionalidad<<left<<setw(15)<<direccion<<left<<setw(15)<<telefono<<left<<setw(15)<<civil<<left<<setw(15)<<fechanaci<<left<<setw(15)<<anoingre<<"\n";
-				encontrado++;
-			}
-		archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
+    archivo.open("Alumnos.bin", ios::binary | ios::in | ios::out);
+    if (!archivo) {
+        cout << "Error, no se encuentra informacion...";
+        return;
+    }
 
-		}
-		archivoTemporal.close();
-		archivo.close();
-		remove("RegistroAlumnos.txt");
-		rename("Temporal.txt","RegistroAlumnos.txt");
-	}
+    cout << "Ingrese el ID de la persona que desea modificar: ";
+    cin >> idPersona;
+
+    Alumno alumno;
+    while (archivo.read(reinterpret_cast<char*>(&alumno), sizeof(Alumno))) {
+        if (alumno.id == idPersona) {
+            encontrado = true;
+            cout << "Ingrese el nuevo ID del estudiante: ";
+            cin >> alumno.id;
+            cout << "Ingrese el nuevo nombre del estudiante: ";
+            cin >> alumno.nombre;
+            cout << "Ingrese el nuevo Genero del estudiante: ";
+            cin >> alumno.Genero;
+            cout << "Ingrese la nueva DPI del estudiante: ";
+            cin >> alumno.DPI;
+            cout << "Ingrese la nueva nacionalidad del estudiante: ";
+            cin >> alumno.nacionalidad;
+            cout << "Ingrese la nueva direccion del estudiante: ";
+            cin >> alumno.direccion;
+            cout << "Ingrese el nuevo Telefono del estuantes: ";
+            cin >> alumno.telefono;
+            cout << "Ingrese el nuevo estado civil del estudiante: ";
+            cin >> alumno.civil;
+            cout << "Ingrese la nueva fecha de nacimiento del estudiante: ";
+            cin >> alumno.fechanaci;
+            cout << "Ingrese el nuevo ano de ingreso del estudiante: ";
+            cin >> alumno.anoingre;
+
+
+            archivo.seekp(-static_cast<int>(sizeof(Alumno)), ios::cur);
+
+
+            archivo.write(reinterpret_cast<char*>(&alumno), sizeof(Alumno));
+            break;
+        }
+    }
+
+    archivo.close();
+
+    if (!encontrado) {
+        cout << "No se encontró un estudiante con el ID proporcionado." << endl;
+    }
+
+    cout << "Presione Enter Para Continuar";
+    cin.ignore();
+    cin.get();
 }
-void alumnos::buscar()
-{
-	system("cls");
-	fstream archivo;
-	int encontrado=0;
-	archivo.open("RegistroAlumnos.txt",ios::in);
-	if(!archivo)
-	{
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-		cout<<"+                        Detalles del estudiante Buscado                      +"<<endl;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
 
-		cout<<"No hay información...";
-	}
-	else
-	{
-		string idPersona;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-		cout<<"+                        Detalles del estudiante Buscada                      +"<<endl;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-
-		cout<<"                Ingrese el ID del estudiante que desea buscar: ";
-		cin>>idPersona;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-		archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		while(!archivo.eof())
-		{
-			if(idPersona==id)
-			{
-        cout<<"                        Mostrando -> ID del estudiante: "<<id <<endl;
-    cout<<"                        Mostrando -> Nombre del estudiante: "  << nombre << endl;
-    cout<<"                        Mostrando -> Genero: " << Genero <<endl;
-    cout<<"                        Mostrando -> DPI : " << DPI <<endl;
-    cout<<"                        Mostrando -> Direccion: " << direccion <<endl;
-    cout<<"                        Mostrando -> Nacionalidad: " << nacionalidad << endl;
-    cout<<"                        Mostrando -> Telefono:  " << telefono << endl;
-    cout<<"                        Mostrando -> Estado Civil:  " << civil << endl;
-    cout<<"                        Mostrando -> Fecha de nacimiento:  " << fechanaci << endl;
-    cout<<"                        Mostrando -> Ano de ingreso:  " << anoingre << endl;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-
-				encontrado++;
-			}
-			archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		}
-		if(encontrado==0)
-		{
-			cout<<"ERROR, ESTUDIANTE NO ENCONTRADO...";
-		}
-		archivo.close();
-	}
-}
 void alumnos::borrar()
 {
 	system("cls");
-	fstream archivo, archivoTemporal;
 	string idPersona;
-	int encontrado=0;
     cout<<"+---------------------------------------------------------------------------------+"<<endl;
 	cout<<"+                             Eliminar estudiante                                 +"<<endl;
     cout<<"+---------------------------------------------------------------------------------+"<<endl;
 
-	archivo.open("RegistroAlumnos.txt",ios::in);
+    ifstream archivo("Alumnos.bin", ios::binary);
 	if(!archivo)
 	{
 		cout<<"Error, no se encuentra informacion...";
-		archivo.close();
+		return;
 	}
-	else
-	{
-		cout<<"-> Ingrese el ID de la persona que desea eliminar: ";
-		cin>>idPersona;
-        cout<<"+---------------------------------------------------------------------------------+"<<endl;
-		archivoTemporal.open("Temporal.txt",ios::app | ios::out);
-		archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		while(!archivo.eof())
+	ofstream archivo2("Alumnos2.bin", ios::binary);
+	Alumno alumno;
+
+    cout<<"-> Ingrese el ID de la persona que desea eliminar: ";
+    cin>>idPersona;
+    bool resta = false;
+    //cout<<"+---------------------------------------------------------------------------------+"<<endl;
+		while(archivo.read(reinterpret_cast<char*>(&alumno), sizeof(Alumno)))
 		{
-			if(idPersona != id)
+			if(alumno.id != idPersona)
 			{
-				archivoTemporal<<left<<setw(15)<<id<<left<<setw(15)<<nombre<<left<<setw(15)<<Genero<<left<<setw(15)<<DPI<<left<<setw(15)<< nacionalidad<<left<<setw(15)<<direccion<<left<<setw(15)<<telefono<<left<<setw(15)<<civil<<left<<setw(15)<<fechanaci<<left<<setw(15)<<anoingre<<"\n";
+				archivo2.write(reinterpret_cast<const char*>(&alumno), sizeof(Alumno));
 			}
 			else
 			{
-			    cout << "El alumno llamado: " << nombre << "a sido eliminado con exito.";
-                encontrado++;
+			    resta = true;
 			}
-		archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
 
 		}
-		archivoTemporal.close();
+
 		archivo.close();
-		remove("RegistroAlumnos.txt");
-		rename("Temporal.txt","RegistroAlumnos.txt");
-	}
+		archivo2.close();
+		remove("Alumnos.bin");
+		rename("Alumnos2.bin","Alumnos.bin");
+
+		if (resta)
+        {
+        cout << "Alumno eliminado con exito." << endl;
+        }
+        else
+        {
+        cout << "No se a podido encontrar el codigo del alumno" << endl;
+        }
 }
