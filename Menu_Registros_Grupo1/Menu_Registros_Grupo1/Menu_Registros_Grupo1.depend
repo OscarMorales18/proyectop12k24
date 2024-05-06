@@ -126,8 +126,6 @@
 	<conio.h>
 	<iomanip>
 
-<<<<<<< HEAD
-=======
 1714781873 c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\exportado de proyecto final\proyectop12k24\menu_registros_grupo1\include\registro.h
 
 1714785577 source:c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\exportado de proyecto final\proyectop12k24\menu_registros_grupo1\src\alumnos.cpp
@@ -175,4 +173,3 @@
 	<conio.h>
 	<iomanip>
 
->>>>>>> 28b3ebde86cd82ec8193d5391a995ac169301b7a
