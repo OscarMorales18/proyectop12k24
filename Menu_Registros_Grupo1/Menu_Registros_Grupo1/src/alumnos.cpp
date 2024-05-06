@@ -5,9 +5,11 @@
 #include<conio.h>
 #include<iomanip>
 #include<string>
+#include "alumnos.h"
 
 using namespace std;
 
+<<<<<<< HEAD
 class alumnos
 {
     private:
@@ -71,9 +73,13 @@ class alumnos
 
 
 };
+=======
+// Creado por Andy Garcia 9959-23-1494
+
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
 
 alumnos::alumnos(string id, string nombre, string telefono, string DPI, string direccion, string Genero, string nacionalidad, string civil, string fechanaci, string anoingre)
-{
+{//creado por Victor Josue Samayoa Ortiz 9959-23-3424
     this->id = id;
     this->nombre = nombre;
     this->telefono = telefono;
@@ -86,7 +92,7 @@ alumnos::alumnos(string id, string nombre, string telefono, string DPI, string d
     this->anoingre = anoingre;
 }
 
-
+//sets y gets de datos alumnos creado por Victor Josue Samayoa Ortiz 9959-23-3424
 string alumnos::setid(string id)
 {
     this->id = id;
@@ -196,7 +202,7 @@ string alumnos::getanoingre()
 {
     return anoingre;
 }
-void alumnos::menu()
+void alumnos::menu()//Modificado por Victor Josue Samayoa Ortiz 9959-23-3424
 {
     int opcion;
 	char continuar;
@@ -213,7 +219,11 @@ void alumnos::menu()
 		cout<<"|            5. Salir del programa              |"<<endl;
 		cout<<"|            6. Regresar al menu                |"<<endl;
 		cout<<"+-----------------------------------------------+"<<endl;
+<<<<<<< HEAD
 		cout<<"|         Ingrese su opcion [1/2/3/4/5/6]       |"<<endl;
+=======
+		cout<<"|        Ingrese su opcion [1/2/3/4/5/6]        |"<<endl;
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
 		cout<<"+-----------------------------------------------+"<<endl;
 		cin>>opcion;
 
@@ -233,13 +243,22 @@ void alumnos::menu()
 			case 3:
 				modificar();
 				break;
+
 			case 4:
+<<<<<<< HEAD
 			    borrar();
+=======
+				borrar();
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
 				break;
 			case 5:
 				exit(0);
 				break;
+<<<<<<< HEAD
 			case 6:
+=======
+            case 6:
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
 				break;
 			default:
 				cout<<"ERROR, OPCION NO VALIDA, INTENTELO DE NUEVO PORFAVOR";
@@ -247,7 +266,7 @@ void alumnos::menu()
 		getch();
     }while(opcion != 6);
 }
-void alumnos::insertar()
+void alumnos::insertar()//modificado por Victor Josue Samayoa Ortiz 9959-23-3424
 {
     system("cls");
     cout<<"+---------------------------------------------------------+"<< endl;
@@ -310,7 +329,14 @@ void alumnos::insertar()
     archivo.close();
 }
 
+<<<<<<< HEAD
 void alumnos::desplegar() {
+=======
+
+
+void alumnos::desplegar() //modificado por Victor Josue Samayoa Ortiz 9959-23-3424
+    {
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
     system("cls");
 
     cout << "+---------------------------------------------------------------------------------+" << endl;

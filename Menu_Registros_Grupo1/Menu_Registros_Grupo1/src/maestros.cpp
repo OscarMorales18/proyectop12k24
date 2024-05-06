@@ -5,22 +5,138 @@
 #include<conio.h>
 #include<iomanip>
 #include<string>
+#include "maestros.h"
 
 using namespace std;
 //Creando CRUD jose Gallardo 9959-23-106 (menu, insertar, desplegar)
 //Creando CRUD Andre Gonzalez 9959-23-3117 (Modificar, Buscar, Borrar)
-class maestros
+
+
+maestros::maestros(string id, string nombre, string telefono, string DPI, string direccion, string Genero, string nacionalidad, string civil, string fechanaci, string anoingre)
+{//creado por Jose Gallardo 9959-23-106
+    this->id = id;
+    this->nombre = nombre;
+    this->telefono = telefono;
+    this->DPI = DPI;
+    this->direccion = direccion;
+    this->Genero = Genero;
+    this->nacionalidad = nacionalidad;
+    this->civil = civil;
+    this->fechanaci = fechanaci;
+    this->anoingre = anoingre;
+}
+
+//sets y gets de datos maestros creado por Jose Gallardo 9959-23-106
+string maestros::setid(string id)
 {
-	private:
-		string id, nombre, telefono, DPI, direccion, Genero, nacionalidad, civil, fechanaci, anoingre;
-	public:
-		void menu();
-		void insertar();
-		void desplegar();
-		void modificar();
-		void buscar();
-		void borrar();
-};
+    this->id = id;
+    return id;
+}
+
+string maestros::getid()
+{
+    return id;
+}
+
+string maestros::setnombre(string nombre)
+{
+    this->nombre = nombre;
+    return nombre;
+}
+
+string maestros::getnombre()
+{
+    return nombre;
+}
+
+string maestros::setTelefono(string telefono)
+{
+    this->telefono = telefono;
+    return telefono;
+}
+
+string maestros::getTelefono()
+{
+    return telefono;
+}
+
+string maestros::setDPI(string DPI)
+{
+    this->DPI = DPI;
+    return DPI;
+}
+
+string maestros::getDPI()
+{
+    return DPI;
+}
+
+string maestros::setdireccion(string direccion)
+{
+    this->direccion = direccion;
+    return direccion;
+}
+
+string maestros::getdireccion()
+{
+    return direccion;
+}
+
+string maestros::setGenero(string Genero)
+{
+    this->Genero = Genero;
+    return Genero;
+}
+
+string maestros::getGenero()
+{
+    return Genero;
+}
+
+string maestros::setnacionalidad(string nacionalidad)
+{
+    this->nacionalidad = nacionalidad;
+    return nacionalidad;
+}
+
+string maestros::getnacionalidad()
+{
+    return nacionalidad;
+}
+
+string maestros::setcivil(string civil)
+{
+    this->civil = civil;
+    return civil;
+}
+
+string maestros::getcivil()
+{
+    return civil;
+}
+
+string maestros::setfechanaci(string fechanaci)
+{
+    this->fechanaci = fechanaci;
+    return fechanaci;
+}
+
+string maestros::getfechanaci()
+{
+    return fechanaci;
+}
+
+string maestros::setanoingre(string anoingre)
+{
+    this->anoingre = anoingre;
+    return anoingre;
+}
+
+string maestros::getanoingre()
+{
+    return anoingre;
+}
+
 void maestros::menu()
 {
     int opcion;
@@ -36,12 +152,11 @@ void maestros::menu()
 		cout<<"|            1. Agregar Maestro                 |"<<endl;
 		cout<<"|            2. Mostrar Maestro                 |"<<endl;
 		cout<<"|            3. Modificar Maestro               |"<<endl;
-		cout<<"|            4. Buscar Maestro                  |"<<endl;
-		cout<<"|            5. Borrar Maestro                  |"<<endl;
-		cout<<"|            6. Salir del programa              |"<<endl;
-		cout<<"|            7. Regresar al menu                |"<<endl;
+		cout<<"|            4. Borrar Maestro                  |"<<endl;
+		cout<<"|            5. Salir del programa              |"<<endl;
+		cout<<"|            6. Regresar al menu                |"<<endl;
 		cout<<"+-----------------------------------------------+"<<endl;
-		cout<<"|        Ingrese su opcion [1/2/3/4/5/6/7]      |"<<endl;
+		cout<<"|        Ingrese su opcion [1/2/3/4/5/6]        |"<<endl;
 		cout<<"+-----------------------------------------------+"<<endl;
 		cin>>opcion;
 
@@ -64,125 +179,116 @@ void maestros::menu()
 				break;
 			case 3:
                 modificar();
+
 			case 4:
-                buscar();
-			case 5:
                 borrar();
-			case 6:
+			case 5:
 				exit(0);
 				break;
-            case 7:
+            case 6:
 				break;
 			default:
 				cout<<"ERROR, OPCION NO VALIDA, INTENTELO DE NUEVO PORFAVOR";
 		}
 		getch();
-    }while(opcion != 7);
+    }while(opcion != 6);
 }
-void maestros::insertar()
+void maestros::insertar()//modificado por Jose Gallardo 9959-23-106
 {
     system("cls");
-    fstream archivo,archivomaestros;
     cout<<"+---------------------------------------------------------+"<< endl;
-    cout<<"|                Agregar detalles del Maestro              |"<< endl;
+    cout<<"|                Agregar detalles del Maestro          |"<< endl;
     cout<<"+---------------------------------------------------------+"<< endl;
-
     srand(time(NULL));
+
+    Maestro maestro;
+
     int year = 24;
     int numAleatorio = (rand() % 9998) + 1;
 
-    id = "9959-" + to_string(year) + "-" + to_string(numAleatorio);
-    cout<<"       -> Generando carnet del maestros: " << id << endl;
+    string idString = "9959-" + to_string(year) + "-" + to_string(numAleatorio);
 
-    cout<<"       -> Ingrese el nombre del maestros:  ";
-    cin>> nombre;
+    for (int i = 0; i < idString.length(); ++i) {
+        maestro.id[i] = idString[i];
+    }
+    maestro.id[idString.length()] = '\0';
 
-    cout<<"       -> Ingrese el Genero del maestros: ";
-    cin>> Genero;
+    cout<<"       -> Generando carnet del maestro: " << maestro.id<<endl;
+    cin.ignore();
+    cout<<"       -> Ingrese el nombre del maestro:  ";
+    cin.getline(maestro.nombre, 50);
 
-    cout<<"       -> Ingrese la DPI del maestros: ";
-    cin>> DPI;
 
-    cout<<"       -> Ingrese la nacionalidad del maestros: ";
-    cin>> nacionalidad;
+    cout<<"       -> Ingrese el Genero del maestro: ";
+    cin.getline(maestro.Genero, 10);
 
-    cout<<"       -> Ingrese la direccion del maestros: ";
-    cin>> direccion;
 
-    cout<<"       -> Ingrese el telefono del maestros: ";
-    cin>> telefono;
+    cout<<"       -> Ingrese la DPI del maestro: ";
+    cin.getline(maestro.DPI, 20);
 
-    cout<<"       -> Ingrese el estado civil del maestros: ";
-    cin >> civil;
+    cout<<"       -> Ingrese la nacionalidad del maestro: ";
+    cin.getline(maestro.nacionalidad, 100);
 
-    cout<<"       -> Ingrese la fecha de nacimiento del maestros: ";
-    cin >> fechanaci;
 
-    cout<<"       -> Ingrese el ano de ingreso del maestros: ";
-    cin >> anoingre;
+    cout<<"       -> Ingrese la direccion del maestro: ";
+    cin.getline(maestro.direccion, 50);
+
+
+    cout<<"       -> Ingrese el telefono del maestro: ";
+    cin.getline(maestro.telefono, 15);
+
+
+    cout<<"       -> Ingrese el estado civil del maestro: ";
+    cin.getline(maestro.civil, 20);
+
+
+    cout<<"       -> Ingrese la fecha de nacimiento del maestro: ";
+    cin.getline(maestro.fechanaci, 20);
+
+
+    cout<<"       -> Ingrese el ano de ingreso del maestro: ";
+    cin.getline(maestro.anoingre, 10);
 
     cout<<"+---------------------------------------------------------+"<< endl;
 
-    archivo.open("RegistroMaestros.txt", ios::app | ios::out);
-    archivo<<left<<setw(15)<<id<<left<<setw(15)<<nombre<<left<<setw(15)<<Genero<<left<<setw(15)<<DPI<<left<<setw(15)<< nacionalidad<<left<<setw(15)<<direccion<<left<<setw(15)<<telefono<<left<<setw(15)<<civil<<left<<setw(15)<<fechanaci<<left<<setw(15)<<anoingre<<"\n";
+    ofstream archivo("Maestros.bin", ios::binary | ios::app);
+    archivo.write(reinterpret_cast<const char*>(&maestro), sizeof(maestro));
     archivo.close();
-
-    //-------------------------------------------------------------------------------------------------------------------
-        string usuario = nombre;
-
-        string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
-        string contrasena;
-        for (int i = 0; i < 8; i++) {
-            contrasena += caracteres[rand() % caracteres.length()];
-        }
-
-        archivomaestros.open("UsuariosMaestros.txt", ios::app | ios::out);
-        archivomaestros<<left<<setw(15)<<usuario<<left<<setw(15)<<contrasena<<"\n";
-        archivomaestros.close();
     //-------------------------------------------------------------------------------------------------------------------
 
 }
-void maestros::desplegar()
+void maestros::desplegar()//modificado por Jose Gallardo 9959-23-106
 {
 	system("cls");
-	fstream archivo;
-	int total=0;
-    cout<<"+---------------------------------------------------------------------------------+"<<endl;
-	cout<<"+                            Tabla de Detalles del Maestro                        +"<<endl;
-    cout<<"+---------------------------------------------------------------------------------+"<<endl;
-	archivo.open("RegistroMaestros.txt",ios::in);
-	if(!archivo)
-	{
-		cout<<"Error, no se encuentra informacion...";
-		archivo.close();
-	}
-	else
-	{
-		archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		while(!archivo.eof())
-		{
-			total++;
-    cout<<"                        Mostrando -> ID del Maestro: "<<id <<endl;
-    cout<<"                        Mostrando -> Nombre del Maestro: "  << nombre << endl;
-    cout<<"                        Mostrando -> Genero: " << Genero <<endl;
-    cout<<"                        Mostrando -> DPI : " << DPI <<endl;
-    cout<<"                        Mostrando -> Direccion: " << direccion <<endl;
-    cout<<"                        Mostrando -> Nacionalidad: " << nacionalidad << endl;
-    cout<<"                        Mostrando -> Telefono:  " << telefono << endl;
-    cout<<"                        Mostrando -> Estado Civil:  " << civil << endl;
-    cout<<"                        Mostrando -> Fecha de nacimiento:  " << fechanaci << endl;
-    cout<<"                        Mostrando -> Ano de ingreso:  " << anoingre << endl;
-    cout<<"+---------------------------------------------------------------------------------+"<<endl;
 
-			archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		}
-		if(total==0)
-		{
-			cout<<"Error, no se encuentra informacion...";
-			archivo.close();
-		}
-	}
-	archivo.close();
+    cout << "+---------------------------------------------------------------------------------+" << endl;
+    cout << "+                            Tabla de Detalles del Estudiante                     +" << endl;
+    cout << "+---------------------------------------------------------------------------------+" << endl;
+    ifstream archivo("Maestros.bin", ios::binary | ios::app);
+    if (!archivo) {
+        cout << "Error, no se encuentra informacion...";
+        return;
+    }
+    Maestro maestro;
+    while (archivo.read(reinterpret_cast<char*>(&maestro), sizeof(Maestro))) {
+
+        cout << "                        Mostrando -> ID del Maestro: " << maestro.id << endl;
+        cout << "                        Mostrando -> Nombre del Maestro: " << maestro.nombre << endl;
+        cout << "                        Mostrando -> Genero: " << maestro.Genero << endl;
+        cout << "                        Mostrando -> DPI : " << maestro.DPI << endl;
+        cout << "                        Mostrando -> Direccion: " << maestro.direccion << endl;
+        cout << "                        Mostrando -> Nacionalidad: " << maestro.nacionalidad << endl;
+        cout << "                        Mostrando -> Telefono: " << maestro.telefono << endl;
+        cout << "                        Mostrando -> Estado Civil: " << maestro.civil << endl;
+        cout << "                        Mostrando -> Fecha de nacimiento: " << maestro.fechanaci << endl;
+        cout << "                        Mostrando -> Ano de ingreso: " << maestro.anoingre << endl;
+        cout << "+---------------------------------------------------------------------------------+" << endl;
+    }
+    archivo.close();
+
+    cout << "Presione Enter Para Continuar";
+    cin.ignore();
+    cin.get();
 }
 void maestros::modificar()
 {
@@ -249,58 +355,7 @@ void maestros::modificar()
 		rename("Temporal.txt","RegistroMaestros.txt");
 	}
 }
-void maestros::buscar()
-{
-	system("cls");
-	fstream archivo;
-	int encontrado=0;
-	archivo.open("RegistroMaestros.txt",ios::in);
-	if(!archivo)
-	{
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-		cout<<"+                        Detalles del Maestro Buscado                      +"<<endl;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
 
-		cout<<"No hay información...";
-	}
-	else
-	{
-		string idPersona;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-		cout<<"+                        Detalles del Maestro Buscada                      +"<<endl;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-
-		cout<<"                Ingrese el ID del Maestro que desea buscar: ";
-		cin>>idPersona;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-		archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		while(!archivo.eof())
-		{
-			if(idPersona==id)
-			{
-        cout<<"                        Mostrando -> ID del Maestro: "<<id <<endl;
-    cout<<"                        Mostrando -> Nombre del Maestro: "  << nombre << endl;
-    cout<<"                        Mostrando -> Genero: " << Genero <<endl;
-    cout<<"                        Mostrando -> DPI : " << DPI <<endl;
-    cout<<"                        Mostrando -> Direccion: " << direccion <<endl;
-    cout<<"                        Mostrando -> Nacionalidad: " << nacionalidad << endl;
-    cout<<"                        Mostrando -> Telefono:  " << telefono << endl;
-    cout<<"                        Mostrando -> Estado Civil:  " << civil << endl;
-    cout<<"                        Mostrando -> Fecha de nacimiento:  " << fechanaci << endl;
-    cout<<"                        Mostrando -> Ano de ingreso:  " << anoingre << endl;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-
-				encontrado++;
-			}
-			archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		}
-		if(encontrado==0)
-		{
-			cout<<"ERROR, ESTUDIANTE NO ENCONTRADO...";
-		}
-		archivo.close();
-	}
-}
 void maestros::borrar()
 {
 	system("cls");

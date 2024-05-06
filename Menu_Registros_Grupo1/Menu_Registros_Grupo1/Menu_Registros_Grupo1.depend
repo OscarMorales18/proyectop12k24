@@ -224,6 +224,7 @@
 	<iomanip>
 	<string>
 
+<<<<<<< HEAD
 1714969271 source:c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\main.cpp
 	<iostream>
 	"Registro.h"
@@ -231,6 +232,15 @@
 1714964959 c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\registro.h
 
 1714969271 source:c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\maestros.cpp
+=======
+1714971656 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\main.cpp
+	<iostream>
+	"Registro.h"
+
+1714971656 d:\umg\programacion1\proyecto grupal\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\registro.h
+
+1714973333 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\alumnos.cpp
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -238,8 +248,14 @@
 	<conio.h>
 	<iomanip>
 	<string>
+<<<<<<< HEAD
 
 1714969271 source:c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\registro.cpp
+=======
+	"alumnos.h"
+
+1714971656 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\registro.cpp
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
 	"Registro.h"
 	<iostream>
 	<fstream>
@@ -250,7 +266,11 @@
 	<maestros.h>
 	<alumnos.h>
 
+<<<<<<< HEAD
 1714964959 c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\maestros.h
+=======
+1714973128 d:\umg\programacion1\proyecto grupal\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\maestros.h
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -258,7 +278,11 @@
 	<conio.h>
 	<iomanip>
 
+<<<<<<< HEAD
 1714969271 c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\alumnos.h
+=======
+1714973128 d:\umg\programacion1\proyecto grupal\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\alumnos.h
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -266,7 +290,11 @@
 	<conio.h>
 	<iomanip>
 
+<<<<<<< HEAD
 1714970801 source:c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\alumnos.cpp
+=======
+1714973322 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\maestros.cpp
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -274,4 +302,8 @@
 	<conio.h>
 	<iomanip>
 	<string>
+<<<<<<< HEAD
+=======
+	"maestros.h"
+>>>>>>> 9419d003f3ff5b25b619507a9cb415790e7b6849
 
