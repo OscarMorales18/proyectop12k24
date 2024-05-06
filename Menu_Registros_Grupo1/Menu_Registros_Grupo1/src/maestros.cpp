@@ -28,7 +28,7 @@ void maestros::menu()
 	do
     {
 		system("cls");
-		system("color E");
+
 
 		cout<<"+-----------------------------------------------+"<<endl;
 		cout<<"|  BIENVENIDO AL SISTEMA DE GESTION DE MAESTROS |"<<endl;

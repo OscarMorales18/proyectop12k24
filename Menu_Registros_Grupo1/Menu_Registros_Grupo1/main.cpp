@@ -7,7 +7,6 @@ using namespace std;
 
 int main()
 {
-    system("color C");
     int opcion;
     char continuar;
     do {

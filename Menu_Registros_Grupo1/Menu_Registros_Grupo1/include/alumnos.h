@@ -14,14 +14,62 @@ using namespace std;
 class alumnos
 {
     private:
-    string id,name,phone,college,address,Genero,Nacionalidadad,EstadoCivil,FechaNacimiento,AnoIngreso;
+    string id, nombre, telefono, DPI, direccion, Genero, nacionalidad, civil, fechanaci, anoingre;
+
     public:
-        void menu();
-        void insertar();
-        void desplegar();
-        void modificar();
-        void buscar();
-        void borrar();
+        alumnos() {}
+
+        alumnos(string id, string nombre, string telefono, string DPI, string direccion, string Genero, string nacionalidad, string civil, string fechanaci, string anoingre);
+        string setid(string id);
+        string getid();
+
+        string setnombre(string nombre);
+        string getnombre();
+
+        string setTelefono(string telefono);
+        string getTelefono();
+
+        string setDPI(string DPI);
+        string getDPI();
+
+        string setdireccion(string direccion);
+        string getdireccion();
+
+        string setGenero(string Genero);
+        string getGenero();
+
+        string setnacionalidad(string nacionalidad);
+        string getnacionalidad();
+
+        string setcivil(string civil);
+        string getcivil();
+
+        string setfechanaci(string fechanaci);
+        string getfechanaci();
+
+        string setanoingre(string anoingre);
+        string getanoingre();
+
+    void menu();
+    void insertar();
+    void desplegar();
+    void modificar();
+    void buscar();
+    void borrar();
+
+    struct Alumno
+    {
+        string id;
+        string nombre;
+        string telefono;
+        string DPI;
+        string direccion;
+        string Genero;
+        string nacionalidad;
+        string civil;
+        string fechanaci;
+        string anoingre;
+    };
 };
 
 #endif // ALUMNOS_H
