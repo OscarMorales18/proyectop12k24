@@ -173,13 +173,13 @@
 	<conio.h>
 	<iomanip>
 
-1714954631 source:c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\main.cpp
+1715017015 source:c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\main.cpp
 	<iostream>
 	"Registro.h"
 
-1714954370 c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\registro.h
+1714975314 c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\registro.h
 
-1714954631 source:c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\maestros.cpp
+1714978151 source:c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\maestros.cpp
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -187,8 +187,9 @@
 	<conio.h>
 	<iomanip>
 	<string>
+	"maestros.h"
 
-1714963911 source:c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\registro.cpp
+1715017031 source:c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\registro.cpp
 	"Registro.h"
 	<iostream>
 	<fstream>
@@ -198,8 +199,9 @@
 	<iomanip>
 	<maestros.h>
 	<alumnos.h>
+	<usuarios.h>
 
-1714954370 c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\maestros.h
+1714978151 c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\maestros.h
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -207,7 +209,7 @@
 	<conio.h>
 	<iomanip>
 
-1714967236 c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\alumnos.h
+1714978151 c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\alumnos.h
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -215,7 +217,7 @@
 	<conio.h>
 	<iomanip>
 
-1714967877 source:c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\alumnos.cpp
+1714978151 source:c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\alumnos.cpp
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -223,6 +225,7 @@
 	<conio.h>
 	<iomanip>
 	<string>
+	"alumnos.h"
 
 1714971656 source:d:\umg\programacion1\proyecto grupal\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\main.cpp
 	<iostream>
@@ -382,4 +385,13 @@
 	<iomanip>
 	<string>
 	"maestros.h"
+
+1715017015 source:c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\src\usuarios.cpp
+	"usuarios.h"
+
+1715016250 c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\menu_registros_grupo1\include\usuarios.h
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
 

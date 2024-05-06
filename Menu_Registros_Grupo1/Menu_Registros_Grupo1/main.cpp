@@ -19,8 +19,7 @@ int main()
         cout << "|            2. Procesos                        |" << endl;
         cout << "|            3. Reportes                        |" << endl;
         cout << "|            4. Ayuda                           |" << endl;
-        cout << "|            5. Gestion de usuarios             |" << endl;
-        cout << "|            6. Salida                          |" << endl;
+        cout << "|            5. Salida                          |" << endl;
         cout << "+-----------------------------------------------+" << endl;
         cout << "|        Ingrese su opcion [1/2/3/4/5/6]        |" << endl;
         cout << "+-----------------------------------------------+" << endl;

@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <maestros.h>
 #include <alumnos.h>
+#include <usuarios.h>
 
 using namespace std;
 
@@ -23,11 +24,11 @@ void Registro::menuR()
     std::cout << "+-----------------------------------------------------------+" << std::endl;
     do
     {
-        std::cout << "       ->Ingrese su respuesta (alumno=1|maestros=2): ";
+        std::cout << "       ->Ingrese su respuesta (alumno=1|maestros=2|usuario=3): ";
         std::cin >> elec;
         std::cout << "+-----------------------------------------------------------+" << std::endl;
 
-    } while ((elec != 1) && (elec != 2));
+    } while ((elec != 1) && (elec != 2) && (elec != 3));
 
     if (elec == 1)
     {
@@ -38,5 +39,10 @@ void Registro::menuR()
     {
         maestros maestro;
         maestro.menu();
+    }
+     else if (elec == 3)
+    {
+        usuarios usuarios;
+        usuarios.run();
     }
 }
