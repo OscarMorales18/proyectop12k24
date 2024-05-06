@@ -5,78 +5,16 @@
 #include<conio.h>
 #include<iomanip>
 #include<string>
+#include "alumnos.h"
 
 
 using namespace std;
 
 // Creado por Andy Garcia 9959-23-1494
 
-class alumnos
-{
-    private:
-    string id, nombre, telefono, DPI, direccion, Genero, nacionalidad, civil, fechanaci, anoingre;
-
-    public:
-        alumnos() {}
-
-        alumnos(string id,string nombre,string telefono,string DPI,string direccion,string Genero,string nacionalidad,string civil,string fechanaci,string anoingre);
-
-        string setid(string id);
-        string getid();
-
-        string setnombre(string nombre);
-        string getnombre();
-
-        string setTelefono(string telefono);
-        string getTelefono();
-
-        string setDPI(string DPI);
-        string getDPI();
-
-        string setdireccion(string direccion);
-        string getdireccion();
-
-        string setGenero(string Genero);
-        string getGenero();
-
-        string setnacionalidad(string nacionalidad);
-        string getnacionalidad();
-
-        string setcivil(string civil);
-        string getcivil();
-
-        string setfechanaci(string fechanaci);
-        string getfechanaci();
-
-        string setanoingre(string anoingre);
-        string getanoingre();
-
-    void menu();
-    void insertar();
-    void desplegar();
-    void modificar();
-    void buscar();
-    void borrar();
-
-    struct Alumno {
-    char id[20];
-    char nombre[50];
-    char Genero[10];
-    char DPI[20];
-    char direccion[100];
-    char nacionalidad[50];
-    char telefono[15];
-    char civil[20];
-    char fechanaci[20];
-    char anoingre[10];
-};
-
-
-
-};
 
 alumnos::alumnos(string id, string nombre, string telefono, string DPI, string direccion, string Genero, string nacionalidad, string civil, string fechanaci, string anoingre)
-{
+{//creado por Victor Josue Samayoa Ortiz 9959-23-3424
     this->id = id;
     this->nombre = nombre;
     this->telefono = telefono;
@@ -89,7 +27,7 @@ alumnos::alumnos(string id, string nombre, string telefono, string DPI, string d
     this->anoingre = anoingre;
 }
 
-
+//sets y gets de datos alumnos creado por Victor Josue Samayoa Ortiz 9959-23-3424
 string alumnos::setid(string id)
 {
     this->id = id;
@@ -199,7 +137,7 @@ string alumnos::getanoingre()
 {
     return anoingre;
 }
-void alumnos::menu()
+void alumnos::menu()//Modificado por Victor Josue Samayoa Ortiz 9959-23-3424
 {
     int opcion;
 	char continuar;
@@ -212,12 +150,11 @@ void alumnos::menu()
 		cout<<"|            1. Agregar Estudiante              |"<<endl;
 		cout<<"|            2. Mostrar Estudiante              |"<<endl;
 		cout<<"|            3. Modificar Estudiante            |"<<endl;
-		cout<<"|            4. Buscar Estudiante               |"<<endl;
-		cout<<"|            5. Borrar Estudiante               |"<<endl;
-		cout<<"|            6. Salir del programa              |"<<endl;
-		cout<<"|            7. Regresar al menu                |"<<endl;
+		cout<<"|            4. Borrar Estudiante               |"<<endl;
+		cout<<"|            5. Salir del programa              |"<<endl;
+		cout<<"|            6. Regresar al menu                |"<<endl;
 		cout<<"+-----------------------------------------------+"<<endl;
-		cout<<"|        Ingrese su opcion [1/2/3/4/5/6/7]      |"<<endl;
+		cout<<"|        Ingrese su opcion [1/2/3/4/5/6]        |"<<endl;
 		cout<<"+-----------------------------------------------+"<<endl;
 		cin>>opcion;
 
@@ -237,24 +174,22 @@ void alumnos::menu()
 			case 3:
 				modificar();
 				break;
+
 			case 4:
-				buscar();
-				break;
-			case 5:
 				borrar();
 				break;
-			case 6:
+			case 5:
 				exit(0);
 				break;
-            case 7:
+            case 6:
 				break;
 			default:
 				cout<<"ERROR, OPCION NO VALIDA, INTENTELO DE NUEVO PORFAVOR";
 		}
 		getch();
-    }while(opcion != 7);
+    }while(opcion != 6);
 }
-void alumnos::insertar()
+void alumnos::insertar()//modificado por Victor Josue Samayoa Ortiz 9959-23-3424
 {
     system("cls");
     cout<<"+---------------------------------------------------------+"<< endl;
@@ -319,7 +254,8 @@ void alumnos::insertar()
 
 
 
-void alumnos::desplegar() {
+void alumnos::desplegar() //modificado por Victor Josue Samayoa Ortiz 9959-23-3424
+    {
     system("cls");
 
     cout << "+---------------------------------------------------------------------------------+" << endl;
@@ -418,58 +354,7 @@ void alumnos::modificar()
 		rename("Temporal.txt","RegistroAlumnos.txt");
 	}
 }
-void alumnos::buscar()
-{
-	system("cls");
-	fstream archivo;
-	int encontrado=0;
-	archivo.open("RegistroAlumnos.txt",ios::in);
-	if(!archivo)
-	{
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-		cout<<"+                        Detalles del estudiante Buscado                      +"<<endl;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
 
-		cout<<"No hay información...";
-	}
-	else
-	{
-		string idPersona;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-		cout<<"+                        Detalles del estudiante Buscada                      +"<<endl;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-
-		cout<<"                Ingrese el ID del estudiante que desea buscar: ";
-		cin>>idPersona;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-		archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		while(!archivo.eof())
-		{
-			if(idPersona==id)
-			{
-        cout<<"                        Mostrando -> ID del estudiante: "<<id <<endl;
-    cout<<"                        Mostrando -> Nombre del estudiante: "  << nombre << endl;
-    cout<<"                        Mostrando -> Genero: " << Genero <<endl;
-    cout<<"                        Mostrando -> DPI : " << DPI <<endl;
-    cout<<"                        Mostrando -> Direccion: " << direccion <<endl;
-    cout<<"                        Mostrando -> Nacionalidad: " << nacionalidad << endl;
-    cout<<"                        Mostrando -> Telefono:  " << telefono << endl;
-    cout<<"                        Mostrando -> Estado Civil:  " << civil << endl;
-    cout<<"                        Mostrando -> Fecha de nacimiento:  " << fechanaci << endl;
-    cout<<"                        Mostrando -> Ano de ingreso:  " << anoingre << endl;
-        cout<<"+-----------------------------------------------------------------------------+"<<endl;
-
-				encontrado++;
-			}
-			archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		}
-		if(encontrado==0)
-		{
-			cout<<"ERROR, ESTUDIANTE NO ENCONTRADO...";
-		}
-		archivo.close();
-	}
-}
 void alumnos::borrar()
 {
 	system("cls");

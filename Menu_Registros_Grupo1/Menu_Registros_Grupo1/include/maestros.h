@@ -8,20 +8,67 @@
 #include<iomanip>
 
 using namespace std;
-//creando clase maestros por jose Gallardo 9959-23-106 (menu, insertar, desplegar)
-//Creando clase maestros por Andre Gonzalez 9959-23-3117 (Modificar, buscar, borrar)
-class maestros
-{
-	private:
-		string id, nombre, telefono, DPI, direccion, Genero, nacionalidad, civil, fechanaci, anoingre;
-	public:
-		void menu();
-		void insertar();
-		void desplegar();
-		void modificar();
-		void buscar();
-		void borrar();
 
+// Creado por Andy Garcia 9959-23-1494
+
+class maestros//modificado por Jose Gallardo 9959-23-106
+{
+    private:
+    string id, nombre, telefono, DPI, direccion, Genero, nacionalidad, civil, fechanaci, anoingre;
+
+    public:
+        maestros() {}
+
+        maestros(string id, string nombre, string telefono, string DPI, string direccion, string Genero, string nacionalidad, string civil, string fechanaci, string anoingre);
+        string setid(string id);
+        string getid();
+
+        string setnombre(string nombre);
+        string getnombre();
+
+        string setTelefono(string telefono);
+        string getTelefono();
+
+        string setDPI(string DPI);
+        string getDPI();
+
+        string setdireccion(string direccion);
+        string getdireccion();
+
+        string setGenero(string Genero);
+        string getGenero();
+
+        string setnacionalidad(string nacionalidad);
+        string getnacionalidad();
+
+        string setcivil(string civil);
+        string getcivil();
+
+        string setfechanaci(string fechanaci);
+        string getfechanaci();
+
+        string setanoingre(string anoingre);
+        string getanoingre();
+
+    void menu();
+    void insertar();
+    void desplegar();
+    void modificar();
+    void buscar();
+    void borrar();
+
+    struct Maestro {
+    char id[20];
+    char nombre[50];
+    char Genero[10];
+    char DPI[20];
+    char direccion[100];
+    char nacionalidad[50];
+    char telefono[15];
+    char civil[20];
+    char fechanaci[20];
+    char anoingre[10];
+};
 };
 
 #endif // MAESTROS_H

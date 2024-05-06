@@ -11,7 +11,7 @@ using namespace std;
 
 // Creado por Andy Garcia 9959-23-1494
 
-class alumnos
+class alumnos//modificado por Victor Josue Samayoa Ortiz 9959-23-3424
 {
     private:
     string id, nombre, telefono, DPI, direccion, Genero, nacionalidad, civil, fechanaci, anoingre;
