@@ -6,22 +6,199 @@
 #include<iomanip>
 #include<string>
 
+
 using namespace std;
 
 // Creado por Andy Garcia 9959-23-1494
 
 class alumnos
 {
-	private:
-		string id, nombre, telefono, DPI, direccion, Genero, nacionalidad, civil, fechanaci, anoingre;
-	public:
-		void menu();
-		void insertar();
-		void desplegar();
-		void modificar();
-		void buscar();
-		void borrar();
+    private:
+    string id, nombre, telefono, DPI, direccion, Genero, nacionalidad, civil, fechanaci, anoingre;
+
+    public:
+        alumnos() {}
+
+        alumnos(string id,string nombre,string telefono,string DPI,string direccion,string Genero,string nacionalidad,string civil,string fechanaci,string anoingre);
+
+        string setid(string id);
+        string getid();
+
+        string setnombre(string nombre);
+        string getnombre();
+
+        string setTelefono(string telefono);
+        string getTelefono();
+
+        string setDPI(string DPI);
+        string getDPI();
+
+        string setdireccion(string direccion);
+        string getdireccion();
+
+        string setGenero(string Genero);
+        string getGenero();
+
+        string setnacionalidad(string nacionalidad);
+        string getnacionalidad();
+
+        string setcivil(string civil);
+        string getcivil();
+
+        string setfechanaci(string fechanaci);
+        string getfechanaci();
+
+        string setanoingre(string anoingre);
+        string getanoingre();
+
+    void menu();
+    void insertar();
+    void desplegar();
+    void modificar();
+    void buscar();
+    void borrar();
+
+    struct Alumno {
+    char id[20];
+    char nombre[50];
+    char Genero[10];
+    char DPI[20];
+    char direccion[100];
+    char nacionalidad[50];
+    char telefono[15];
+    char civil[20];
+    char fechanaci[20];
+    char anoingre[10];
 };
+
+
+
+};
+
+alumnos::alumnos(string id, string nombre, string telefono, string DPI, string direccion, string Genero, string nacionalidad, string civil, string fechanaci, string anoingre)
+{
+    this->id = id;
+    this->nombre = nombre;
+    this->telefono = telefono;
+    this->DPI = DPI;
+    this->direccion = direccion;
+    this->Genero = Genero;
+    this->nacionalidad = nacionalidad;
+    this->civil = civil;
+    this->fechanaci = fechanaci;
+    this->anoingre = anoingre;
+}
+
+
+string alumnos::setid(string id)
+{
+    this->id = id;
+    return id;
+}
+
+string alumnos::getid()
+{
+    return id;
+}
+
+string alumnos::setnombre(string nombre)
+{
+    this->nombre = nombre;
+    return nombre;
+}
+
+string alumnos::getnombre()
+{
+    return nombre;
+}
+
+string alumnos::setTelefono(string telefono)
+{
+    this->telefono = telefono;
+    return telefono;
+}
+
+string alumnos::getTelefono()
+{
+    return telefono;
+}
+
+string alumnos::setDPI(string DPI)
+{
+    this->DPI = DPI;
+    return DPI;
+}
+
+string alumnos::getDPI()
+{
+    return DPI;
+}
+
+string alumnos::setdireccion(string direccion)
+{
+    this->direccion = direccion;
+    return direccion;
+}
+
+string alumnos::getdireccion()
+{
+    return direccion;
+}
+
+string alumnos::setGenero(string Genero)
+{
+    this->Genero = Genero;
+    return Genero;
+}
+
+string alumnos::getGenero()
+{
+    return Genero;
+}
+
+string alumnos::setnacionalidad(string nacionalidad)
+{
+    this->nacionalidad = nacionalidad;
+    return nacionalidad;
+}
+
+string alumnos::getnacionalidad()
+{
+    return nacionalidad;
+}
+
+string alumnos::setcivil(string civil)
+{
+    this->civil = civil;
+    return civil;
+}
+
+string alumnos::getcivil()
+{
+    return civil;
+}
+
+string alumnos::setfechanaci(string fechanaci)
+{
+    this->fechanaci = fechanaci;
+    return fechanaci;
+}
+
+string alumnos::getfechanaci()
+{
+    return fechanaci;
+}
+
+string alumnos::setanoingre(string anoingre)
+{
+    this->anoingre = anoingre;
+    return anoingre;
+}
+
+string alumnos::getanoingre()
+{
+    return anoingre;
+}
 void alumnos::menu()
 {
     int opcion;
@@ -29,7 +206,6 @@ void alumnos::menu()
 	do
     {
 		system("cls");
-        system("color B");
 		cout<<"+-----------------------------------------------+"<<endl;
 		cout<<"|  BIENVENIDO AL SISTEMA DE GESTION DE ALUMNOS  |"<<endl;
 		cout<<"+-----------------------------------------------+"<<endl;
@@ -80,107 +256,103 @@ void alumnos::menu()
 }
 void alumnos::insertar()
 {
-	system("cls");
-	fstream archivo,archivousuario;
-	cout<<"+---------------------------------------------------------+"<< endl;
-	cout<<"|                Agregar detalles del Estudiante          |"<< endl;
-	cout<<"+---------------------------------------------------------+"<< endl;
-	srand(time(NULL));
+    system("cls");
+    cout<<"+---------------------------------------------------------+"<< endl;
+    cout<<"|                Agregar detalles del Estudiante          |"<< endl;
+    cout<<"+---------------------------------------------------------+"<< endl;
+    srand(time(NULL));
+
+    Alumno alumno;
+
     int year = 24;
     int numAleatorio = (rand() % 9998) + 1;
 
-    id = "9959-" + to_string(year) + "-" + to_string(numAleatorio);
-    cout<<"       -> Generando carnet del estudiante: " << id << endl;
+    string idString = "9959-" + to_string(year) + "-" + to_string(numAleatorio);
 
-	cout<<"       -> Ingrese el nombre del estudiante:  ";
-	cin>> nombre;
+    for (int i = 0; i < idString.length(); ++i) {
+        alumno.id[i] = idString[i];
+    }
+    alumno.id[idString.length()] = '\0';
 
-	cout<<"       -> Ingrese el Genero del estudiante: ";
-	cin>> Genero;
+    cout<<"       -> Generando carnet del estudiante: " << alumno.id<<endl;
+    cin.ignore();
+    cout<<"       -> Ingrese el nombre del estudiante:  ";
+    cin.getline(alumno.nombre, 50);
 
-	cout<<"       -> Ingrese la DPI del estudiante: ";
-	cin>> DPI;
 
-	cout<<"       -> Ingrese la nacionalidad del estudiante: ";
-	cin>> nacionalidad;
+    cout<<"       -> Ingrese el Genero del estudiante: ";
+    cin.getline(alumno.Genero, 10);
 
-	cout<<"       -> Ingrese la direccion del estudiante: ";
-	cin>> direccion;
+
+    cout<<"       -> Ingrese la DPI del estudiante: ";
+    cin.getline(alumno.DPI, 20);
+
+    cout<<"       -> Ingrese la nacionalidad del estudiante: ";
+    cin.getline(alumno.nacionalidad, 100);
+
+
+    cout<<"       -> Ingrese la direccion del estudiante: ";
+    cin.getline(alumno.direccion, 50);
+
 
     cout<<"       -> Ingrese el telefono del estudiante: ";
-	cin>> telefono;
+    cin.getline(alumno.telefono, 15);
 
-	cout<<"       -> Ingrese el estado civil del estudiante: ";
-	cin >> civil;
 
-	cout<<"       -> Ingrese la fecha de nacimiento del estudiante: ";
-	cin >> fechanaci;
+    cout<<"       -> Ingrese el estado civil del estudiante: ";
+    cin.getline(alumno.civil, 20);
 
-	cout<<"       -> Ingrese el ano de ingreso del estudiante: ";
-	cin >> anoingre;
+
+    cout<<"       -> Ingrese la fecha de nacimiento del estudiante: ";
+    cin.getline(alumno.fechanaci, 20);
+
+
+    cout<<"       -> Ingrese el ano de ingreso del estudiante: ";
+    cin.getline(alumno.anoingre, 10);
 
     cout<<"+---------------------------------------------------------+"<< endl;
 
-	archivo.open("RegistroAlumnos.txt", ios::app | ios::out);
-	archivo<<left<<setw(15)<<id<<left<<setw(15)<<nombre<<left<<setw(15)<<Genero<<left<<setw(15)<<DPI<<left<<setw(15)<< nacionalidad<<left<<setw(15)<<direccion<<left<<setw(15)<<telefono<<left<<setw(15)<<civil<<left<<setw(15)<<fechanaci<<left<<setw(15)<<anoingre<<"\n";
-	archivo.close();
-
-	//-------------------------------------------------------------------------------------------------------------------
-        string usuario = nombre;
-
-        string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
-        string contrasena;
-        for (int i = 0; i < 8; i++) {
-            contrasena += caracteres[rand() % caracteres.length()];
-        }
-
-        archivousuario.open("UsuariosAlumnos.txt", ios::app | ios::out);
-        archivousuario<<left<<setw(15)<<usuario<<left<<setw(15)<<contrasena<<"\n";
-        archivousuario.close();
-    //-------------------------------------------------------------------------------------------------------------------
+    ofstream archivo("Alumnos.bin", ios::binary | ios::app);
+    archivo.write(reinterpret_cast<const char*>(&alumno), sizeof(alumno));
+    archivo.close();
 }
-void alumnos::desplegar()
-{
-	system("cls");
-	fstream archivo;
-	int total=0;
-    cout<<"+---------------------------------------------------------------------------------+"<<endl;
-	cout<<"+                            Tabla de Detalles del Estudiante                     +"<<endl;
-    cout<<"+---------------------------------------------------------------------------------+"<<endl;
-	archivo.open("RegistroAlumnos.txt",ios::in);
-	if(!archivo)
-	{
-		cout<<"Error, no se encuentra informacion...";
-		archivo.close();
-	}
-	else
-	{
-		archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		while(!archivo.eof())
-		{
-			total++;
-    cout<<"                        Mostrando -> ID del estudiante: "<<id <<endl;
-    cout<<"                        Mostrando -> Nombre del estudiante: "  << nombre << endl;
-    cout<<"                        Mostrando -> Genero: " << Genero <<endl;
-    cout<<"                        Mostrando -> DPI : " << DPI <<endl;
-    cout<<"                        Mostrando -> Direccion: " << direccion <<endl;
-    cout<<"                        Mostrando -> Nacionalidad: " << nacionalidad << endl;
-    cout<<"                        Mostrando -> Telefono:  " << telefono << endl;
-    cout<<"                        Mostrando -> Estado Civil:  " << civil << endl;
-    cout<<"                        Mostrando -> Fecha de nacimiento:  " << fechanaci << endl;
-    cout<<"                        Mostrando -> Ano de ingreso:  " << anoingre << endl;
-    cout<<"+---------------------------------------------------------------------------------+"<<endl;
 
-			archivo >> id >> nombre >> Genero >> DPI >> nacionalidad >> direccion >> telefono >> civil >> fechanaci >> anoingre;
-		}
-		if(total==0)
-		{
-			cout<<"Error, no se encuentra informacion...";
-			archivo.close();
-		}
-	}
-	archivo.close();
+
+
+void alumnos::desplegar() {
+    system("cls");
+
+    cout << "+---------------------------------------------------------------------------------+" << endl;
+    cout << "+                            Tabla de Detalles del Estudiante                     +" << endl;
+    cout << "+---------------------------------------------------------------------------------+" << endl;
+    ifstream archivo("Alumnos.bin", ios::binary | ios::app);
+    if (!archivo) {
+        cout << "Error, no se encuentra informacion...";
+        return;
+    }
+    Alumno alumno;
+    while (archivo.read(reinterpret_cast<char*>(&alumno), sizeof(Alumno))) {
+
+        cout << "                        Mostrando -> ID del estudiante: " << alumno.id << endl;
+        cout << "                        Mostrando -> Nombre del estudiante: " << alumno.nombre << endl;
+        cout << "                        Mostrando -> Genero: " << alumno.Genero << endl;
+        cout << "                        Mostrando -> DPI : " << alumno.DPI << endl;
+        cout << "                        Mostrando -> Direccion: " << alumno.direccion << endl;
+        cout << "                        Mostrando -> Nacionalidad: " << alumno.nacionalidad << endl;
+        cout << "                        Mostrando -> Telefono: " << alumno.telefono << endl;
+        cout << "                        Mostrando -> Estado Civil: " << alumno.civil << endl;
+        cout << "                        Mostrando -> Fecha de nacimiento: " << alumno.fechanaci << endl;
+        cout << "                        Mostrando -> Ano de ingreso: " << alumno.anoingre << endl;
+        cout << "+---------------------------------------------------------------------------------+" << endl;
+    }
+    archivo.close();
+
+    cout << "Presione Enter Para Continuar";
+    cin.ignore();
+    cin.get();
 }
+
+
 void alumnos::modificar()
 {
 	system("cls");

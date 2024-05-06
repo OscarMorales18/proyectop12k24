@@ -14,32 +14,29 @@ using namespace std;
 
 void Registro::menuR()
 {
-
-
-     system("color A");
     int elec;
 
-    cout<<"+-----------------------------------------------------------+"<< endl;
-    cout<<"+             Registro de Alumnos y Maestros                +"<< endl;
-    cout<<"+-----------------------------------------------------------+"<< endl;
-    cout<<"    Indique si quiere agregar a un alumno o a un maestro    +" << endl;
-    cout<<"+-----------------------------------------------------------+"<< endl;
+    std::cout << "+-----------------------------------------------------------+" << std::endl;
+    std::cout << "+             Registro de Alumnos y Maestros                +" << std::endl;
+    std::cout << "+-----------------------------------------------------------+" << std::endl;
+    std::cout << "    Indique si quiere agregar a un alumno o a un maestro    +" << std::endl;
+    std::cout << "+-----------------------------------------------------------+" << std::endl;
     do
     {
-    cout <<"       ->Ingrese su respuesta (alumno=1|maestros=2): ";
-    cin >> elec;
-    cout<<"+-----------------------------------------------------------+"<< endl;
+        std::cout << "       ->Ingrese su respuesta (alumno=1|maestros=2): ";
+        std::cin >> elec;
+        std::cout << "+-----------------------------------------------------------+" << std::endl;
 
-    } while ((elec!=1) && (elec!=2));
+    } while ((elec != 1) && (elec != 2));
 
-    if (elec==1)
+    if (elec == 1)
     {
-        alumnos alumnos;
-        alumnos.menu();
+        alumnos Ralumnos;
+        Ralumnos.menu();
     }
-    else if (elec==2)
+    else if (elec == 2)
     {
         maestros maestro;
         maestro.menu();
     }
- }
+}
