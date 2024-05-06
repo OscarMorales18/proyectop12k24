@@ -57,19 +57,18 @@ class alumnos
     void buscar();
     void borrar();
 
-    struct Alumno
-    {
-        string id;
-        string nombre;
-        string telefono;
-        string DPI;
-        string direccion;
-        string Genero;
-        string nacionalidad;
-        string civil;
-        string fechanaci;
-        string anoingre;
-    };
+    struct Alumno {
+    char id[20];
+    char nombre[50];
+    char Genero[10];
+    char DPI[20];
+    char direccion[100];
+    char nacionalidad[50];
+    char telefono[15];
+    char civil[20];
+    char fechanaci[20];
+    char anoingre[10];
+};
 };
 
 #endif // ALUMNOS_H

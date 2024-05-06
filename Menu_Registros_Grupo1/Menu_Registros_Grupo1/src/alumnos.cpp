@@ -267,46 +267,52 @@ void alumnos::insertar()
     int year = 24;
     int numAleatorio = (rand() % 9998) + 1;
 
-    // Generar el ID como una cadena de caracteres
     string idString = "9959-" + to_string(year) + "-" + to_string(numAleatorio);
 
-    // Copiar la cadena de caracteres en el campo 'id' de la estructura 'Alumno'
     for (int i = 0; i < idString.length(); ++i) {
         alumno.id[i] = idString[i];
     }
     alumno.id[idString.length()] = '\0';
-    cout<<"       -> Generando carnet del estudiante: " << alumno.id << endl;
 
+    cout<<"       -> Generando carnet del estudiante: " << alumno.id<<endl;
+    cin.ignore();
     cout<<"       -> Ingrese el nombre del estudiante:  ";
-    cin>> alumno.nombre;
+    cin.getline(alumno.nombre, 50);
+
 
     cout<<"       -> Ingrese el Genero del estudiante: ";
-    cin>> alumno.Genero;
+    cin.getline(alumno.Genero, 10);
+
 
     cout<<"       -> Ingrese la DPI del estudiante: ";
-    cin>> alumno.DPI;
+    cin.getline(alumno.DPI, 20);
 
     cout<<"       -> Ingrese la nacionalidad del estudiante: ";
-    cin>> alumno.nacionalidad;
+    cin.getline(alumno.nacionalidad, 100);
+
 
     cout<<"       -> Ingrese la direccion del estudiante: ";
-    cin>> alumno.direccion;
+    cin.getline(alumno.direccion, 50);
+
 
     cout<<"       -> Ingrese el telefono del estudiante: ";
-    cin>> alumno.telefono;
+    cin.getline(alumno.telefono, 15);
+
 
     cout<<"       -> Ingrese el estado civil del estudiante: ";
-    cin >> alumno.civil;
+    cin.getline(alumno.civil, 20);
+
 
     cout<<"       -> Ingrese la fecha de nacimiento del estudiante: ";
-    cin >> alumno.fechanaci;
+    cin.getline(alumno.fechanaci, 20);
+
 
     cout<<"       -> Ingrese el ano de ingreso del estudiante: ";
-    cin >> alumno.anoingre;
+    cin.getline(alumno.anoingre, 10);
 
     cout<<"+---------------------------------------------------------+"<< endl;
 
-    ofstream archivo("Personas.bin", ios::binary | ios::app);
+    ofstream archivo("Alumnos.bin", ios::binary | ios::app);
     archivo.write(reinterpret_cast<const char*>(&alumno), sizeof(alumno));
     archivo.close();
 }
@@ -319,24 +325,13 @@ void alumnos::desplegar() {
     cout << "+---------------------------------------------------------------------------------+" << endl;
     cout << "+                            Tabla de Detalles del Estudiante                     +" << endl;
     cout << "+---------------------------------------------------------------------------------+" << endl;
-    ifstream archivo("Personas.bin", ios::binary | ios::app);
+    ifstream archivo("Alumnos.bin", ios::binary | ios::app);
     if (!archivo) {
         cout << "Error, no se encuentra informacion...";
         return;
     }
     Alumno alumno;
-    while (archivo.read(reinterpret_cast<char*>(&alumno), sizeof(Alumno)))
-    {
-        alumno.id[sizeof(alumno.id) - 1] = '\0';
-        alumno.nombre[sizeof(alumno.nombre) - 1] = '\0';
-        alumno.Genero[sizeof(alumno.Genero) - 1] = '\0';
-        alumno.DPI[sizeof(alumno.DPI) - 1] = '\0';
-        alumno.direccion[sizeof(alumno.direccion) - 1] = '\0';
-        alumno.nacionalidad[sizeof(alumno.nacionalidad) - 1] = '\0';
-        alumno.telefono[sizeof(alumno.telefono) - 1] = '\0';
-        alumno.civil[sizeof(alumno.civil) - 1] = '\0';
-        alumno.fechanaci[sizeof(alumno.fechanaci) - 1] = '\0';
-        alumno.anoingre[sizeof(alumno.anoingre) - 1] = '\0';
+    while (archivo.read(reinterpret_cast<char*>(&alumno), sizeof(Alumno))) {
 
         cout << "                        Mostrando -> ID del estudiante: " << alumno.id << endl;
         cout << "                        Mostrando -> Nombre del estudiante: " << alumno.nombre << endl;
@@ -351,10 +346,12 @@ void alumnos::desplegar() {
         cout << "+---------------------------------------------------------------------------------+" << endl;
     }
     archivo.close();
+
     cout << "Presione Enter Para Continuar";
     cin.ignore();
     cin.get();
 }
+
 
 void alumnos::modificar()
 {
@@ -516,38 +513,3 @@ void alumnos::borrar()
 		rename("Temporal.txt","RegistroAlumnos.txt");
 	}
 }
-/*void alumnos::imprimirRegistro(fstream &leerDeArchivo) {
-    ofstream archivoImprimirSalida("imprimir.txt", ios::out);
-
-    // salir del programa si ofstream no puede crear el archivo
-    if (!archivoImprimirSalida) {
-        cerr << "No se pudo crear el archivo." << endl;
-        exit(1);
-    }
-
-    archivoImprimirSalida << left << setw(10) << "Cuenta" << setw(16)
-                          << "Apellido" << setw(14) << "Primer nombre" << right
-                          << setw(10) << "Saldo" << endl;
-
-    // colocar el apuntador de posición de archivo al principio del archivo de registros
-    leerDeArchivo.seekg(0);
-
-    // leer el primer registro del archivo de registros
-    alumnos cliente;
-    leerDeArchivo.read(reinterpret_cast<char *>(&cliente),
-                       sizeof(alumnos));
-
-    // copiar todos los registros del archivo de registros en el archivo de texto
-    while (!leerDeArchivo.eof()) {
-
-        // escribir un registro individual en el archivo de texto
-        if (cliente.obtenerNumeroCuenta() != 0)
-            mostrarLinea(archivoImprimirSalida, cliente);
-
-        // leer siguiente registro del archivo de registros
-        leerDeArchivo.read(reinterpret_cast<char *>(&cliente),
-                           sizeof(alumnos));
-    }
-}
-*/
-
