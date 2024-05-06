@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1714780159 source:c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\exportado de proyecto final\proyectop12k24\menu_registros_grupo1\main.cpp
+1714952263 source:c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\exportado de proyecto final\proyectop12k24\menu_registros_grupo1\main.cpp
 	<iostream>
+	"Registro.h"
 
 1714781819 source:c:\users\josue\onedrive\escritorio\proyecto progra\proyectop12k24\menu_registros_grupo1\main.cpp
 	<iostream>
@@ -125,3 +126,53 @@
 	<conio.h>
 	<iomanip>
 
+<<<<<<< HEAD
+=======
+1714781873 c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\exportado de proyecto final\proyectop12k24\menu_registros_grupo1\include\registro.h
+
+1714785577 source:c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\exportado de proyecto final\proyectop12k24\menu_registros_grupo1\src\alumnos.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<string>
+
+1714784319 source:c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\exportado de proyecto final\proyectop12k24\menu_registros_grupo1\src\maestros.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<string>
+
+1714785577 source:c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\exportado de proyecto final\proyectop12k24\menu_registros_grupo1\src\registro.cpp
+	"Registro.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<maestros.h>
+	<alumnos.h>
+
+1714784319 c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\exportado de proyecto final\proyectop12k24\menu_registros_grupo1\include\maestros.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1714785577 c:\users\oskar\onedrive\escritorio\tercer semestre\programación i\programas exportados de github\exportado de proyecto final\proyectop12k24\menu_registros_grupo1\include\alumnos.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+>>>>>>> 28b3ebde86cd82ec8193d5391a995ac169301b7a
