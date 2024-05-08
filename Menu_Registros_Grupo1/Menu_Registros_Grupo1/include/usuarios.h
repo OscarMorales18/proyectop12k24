@@ -1,30 +1,47 @@
+
+//Creado por Victor samayoa 9959-23-3424
+
 #ifndef USUARIOS_H
 #define USUARIOS_H
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
+#include<iostream>
 
-using namespace std;
+using std::string;
 
 class usuarios
 {
-private:
-    struct User {
-        string username;
-        string password;
-    };
-    vector<User> users;
-    void saveToFile();
-    void readFromFile();
-public:
-    usuarios();
-    void createUser();
-    void readUsers();
-    void updateUser();
-    void deleteUser();
-    void run();
-};
+    public:
+        usuarios();
+        virtual ~usuarios();
+        bool loginUsuarios();
+        void menuUsuarios();
+        bool buscar(string user, string passw);
+        string getNombre();
+        string setNombre(string nombre);
 
+        void insertar();
+        void desplegar();
+        void modificar();
+        void borrar();
+
+        usuarios(string usu, string contra);
+        string setid(string usu);
+        string getid();
+
+        string setnombre(string contra);
+        string getnombre();
+
+        struct Usuario {
+            char usu[20];
+            char contra[50];
+        };
+
+    protected:
+
+    private:
+		string id;
+		string name;
+		string pass;
+
+};
 
 #endif // USUARIOS_H

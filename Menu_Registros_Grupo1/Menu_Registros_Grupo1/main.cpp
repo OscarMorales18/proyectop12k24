@@ -1,5 +1,6 @@
+
 //Menu General creado por Oscar Morales 9959-23-3070
-// apartado de ingreso a submenu creado por Victo Samayoa Ortiz  9959-23-3424
+
 #include <iostream>
 #include "Registro.h"
 

@@ -1,3 +1,6 @@
+
+// Creado por Andy Garcia 9959-23-1494
+
 #include "Registro.h"
 #include <iostream>
 #include <fstream>
@@ -11,8 +14,6 @@
 
 using namespace std;
 
-// Creado por Victo Samayoa Ortiz  9959-23-3424
-
 void Registro::menuR()
 {
     int elec;
@@ -24,7 +25,7 @@ void Registro::menuR()
     std::cout << "+-----------------------------------------------------------+" << std::endl;
     do
     {
-        std::cout << "       ->Ingrese su respuesta (alumno=1|maestros=2|usuario=3): ";
+        std::cout << "  ->Ingrese su respuesta (alumno=1|maestros=2|usuario=3): ";
         std::cin >> elec;
         std::cout << "+-----------------------------------------------------------+" << std::endl;
 
@@ -43,6 +44,6 @@ void Registro::menuR()
      else if (elec == 3)
     {
         usuarios usuarios;
-        usuarios.run();
+        usuarios.menuUsuarios();
     }
 }

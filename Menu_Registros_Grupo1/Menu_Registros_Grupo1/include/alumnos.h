@@ -1,3 +1,6 @@
+
+//Creando por Andre Gonzalez 9959-23-3117
+
 #ifndef ALUMNOS_H
 #define ALUMNOS_H
 #include<iostream>
@@ -9,9 +12,7 @@
 
 using namespace std;
 
-// Creado por Andy Garcia 9959-23-1494
-
-class alumnos//modificado por Victor Josue Samayoa Ortiz 9959-23-3424
+class alumnos
 {
     private:
     string id, nombre, telefono, DPI, direccion, Genero, nacionalidad, civil, fechanaci, anoingre;

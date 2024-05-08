@@ -1,3 +1,6 @@
+
+// Creado por Andy Garcia 9959-23-1494
+
 #ifndef REGISTRO_H
 #define REGISTRO_H
 

@@ -1,3 +1,6 @@
+
+//creado por Oscar Morales 9959-23-3070
+
 #include<iostream>
 #include<fstream>
 #include<stdlib.h>
@@ -7,14 +10,10 @@
 #include<string>
 #include "alumnos.h"
 
-
 using namespace std;
 
-// Creado por Andy Garcia 9959-23-1494
-
-
 alumnos::alumnos(string id, string nombre, string telefono, string DPI, string direccion, string Genero, string nacionalidad, string civil, string fechanaci, string anoingre)
-{//creado por Victor Josue Samayoa Ortiz 9959-23-3424
+{
     this->id = id;
     this->nombre = nombre;
     this->telefono = telefono;
@@ -27,7 +26,6 @@ alumnos::alumnos(string id, string nombre, string telefono, string DPI, string d
     this->anoingre = anoingre;
 }
 
-//sets y gets de datos alumnos creado por Victor Josue Samayoa Ortiz 9959-23-3424
 string alumnos::setid(string id)
 {
     this->id = id;
@@ -137,7 +135,7 @@ string alumnos::getanoingre()
 {
     return anoingre;
 }
-void alumnos::menu()//Modificado por Victor Josue Samayoa Ortiz 9959-23-3424
+void alumnos::menu()
 {
     int opcion;
 	char continuar;
@@ -188,7 +186,7 @@ void alumnos::menu()//Modificado por Victor Josue Samayoa Ortiz 9959-23-3424
 		getch();
     }while(opcion != 6);
 }
-void alumnos::insertar()//modificado por Victor Josue Samayoa Ortiz 9959-23-3424
+void alumnos::insertar()
 {
     system("cls");
     cout<<"+---------------------------------------------------------+"<< endl;
@@ -246,21 +244,19 @@ void alumnos::insertar()//modificado por Victor Josue Samayoa Ortiz 9959-23-3424
 
     cout<<"+---------------------------------------------------------+"<< endl;
 
-    ofstream archivo("Alumnos.bin", ios::binary | ios::app);
+    ofstream archivo("Alumnos.dat", ios::binary | ios::app);
     archivo.write(reinterpret_cast<const char*>(&alumno), sizeof(alumno));
     archivo.close();
 }
 
-
-
-void alumnos::desplegar() //modificado por Victor Josue Samayoa Ortiz 9959-23-3424
+void alumnos::desplegar()
     {
     system("cls");
 
     cout << "+---------------------------------------------------------------------------------+" << endl;
     cout << "+                            Tabla de Detalles del Estudiante                     +" << endl;
     cout << "+---------------------------------------------------------------------------------+" << endl;
-    ifstream archivo("Alumnos.bin", ios::binary | ios::app);
+    ifstream archivo("Alumnos.dat", ios::binary | ios::app);
     if (!archivo) {
         cout << "Error, no se encuentra informacion...";
         return;
@@ -287,7 +283,6 @@ void alumnos::desplegar() //modificado por Victor Josue Samayoa Ortiz 9959-23-34
     cin.get();
 }
 
-
 void alumnos::modificar()
 {
 	system("cls");
@@ -299,7 +294,7 @@ void alumnos::modificar()
     cout << "+                       Modificar Detalles del estudiante                         +" << endl;
     cout << "+---------------------------------------------------------------------------------+" << endl;
 
-    archivo.open("Alumnos.bin", ios::binary | ios::in | ios::out);
+    archivo.open("Alumnos.dat", ios::binary | ios::in | ios::out);
     if (!archivo) {
         cout << "Error, no se encuentra informacion...";
         return;
@@ -361,13 +356,13 @@ void alumnos::borrar()
 	cout<<"+                             Eliminar estudiante                                 +"<<endl;
     cout<<"+---------------------------------------------------------------------------------+"<<endl;
 
-    ifstream archivo("Alumnos.bin", ios::binary);
+    ifstream archivo("Alumnos.dat", ios::binary);
 	if(!archivo)
 	{
 		cout<<"Error, no se encuentra informacion...";
 		return;
 	}
-	ofstream archivo2("Alumnos2.bin", ios::binary);
+	ofstream archivo2("Alumnos2.dat", ios::binary);
 	Alumno alumno;
 
     cout<<"-> Ingrese el ID de la persona que desea eliminar: ";
@@ -389,8 +384,8 @@ void alumnos::borrar()
 
 		archivo.close();
 		archivo2.close();
-		remove("Alumnos.bin");
-		rename("Alumnos2.bin","Alumnos.bin");
+		remove("Alumnos.dat");
+		rename("Alumnos2.dat","Alumnos.dat");
 
 		if (resta)
         {

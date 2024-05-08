@@ -2,75 +2,95 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="include\maestros.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="673" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="include\Registro.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="84" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="src\maestros.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="11755" topLine="203" />
+			<Cursor1 position="5703" topLine="0" />
 		</Cursor>
 		<Folding>
-			<Collapse line="197" />
-			<Collapse line="261" />
-			<Collapse line="294" />
+			<Collapse line="15" />
+			<Collapse line="29" />
+			<Collapse line="35" />
+			<Collapse line="40" />
+			<Collapse line="46" />
+			<Collapse line="51" />
+			<Collapse line="57" />
+			<Collapse line="62" />
+			<Collapse line="68" />
+			<Collapse line="73" />
+			<Collapse line="79" />
+			<Collapse line="84" />
+			<Collapse line="90" />
+			<Collapse line="95" />
+			<Collapse line="101" />
+			<Collapse line="106" />
+			<Collapse line="112" />
+			<Collapse line="117" />
+			<Collapse line="123" />
+			<Collapse line="128" />
+			<Collapse line="134" />
 		</Folding>
 	</File>
-	<File name="include\alumnos.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Registro.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1731" topLine="21" />
+			<Cursor1 position="40" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\usuarios.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Registro.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="335" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Registro.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1318" topLine="13" />
-		</Cursor>
-	</File>
-	<File name="src\alumnos.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4016" topLine="161" />
-		</Cursor>
-		<Folding>
-			<Collapse line="48" />
-			<Collapse line="53" />
-			<Collapse line="59" />
-			<Collapse line="64" />
-			<Collapse line="70" />
-			<Collapse line="75" />
-			<Collapse line="81" />
-			<Collapse line="86" />
-			<Collapse line="92" />
-			<Collapse line="97" />
-			<Collapse line="103" />
-			<Collapse line="108" />
-			<Collapse line="114" />
-			<Collapse line="119" />
-			<Collapse line="125" />
-			<Collapse line="130" />
-			<Collapse line="136" />
-			<Collapse line="191" />
-			<Collapse line="256" />
-		</Folding>
-	</File>
-	<File name="src\usuarios.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1358" topLine="81" />
+			<Cursor1 position="846" topLine="18" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1051" topLine="9" />
+			<Cursor1 position="56" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="include\alumnos.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1708" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\usuarios.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="518" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\alumnos.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11247" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="15" />
+			<Collapse line="29" />
+			<Collapse line="35" />
+			<Collapse line="40" />
+			<Collapse line="46" />
+			<Collapse line="51" />
+			<Collapse line="57" />
+			<Collapse line="62" />
+			<Collapse line="68" />
+			<Collapse line="73" />
+			<Collapse line="79" />
+			<Collapse line="84" />
+			<Collapse line="90" />
+			<Collapse line="95" />
+			<Collapse line="101" />
+			<Collapse line="106" />
+			<Collapse line="112" />
+			<Collapse line="117" />
+			<Collapse line="123" />
+			<Collapse line="128" />
+			<Collapse line="134" />
+		</Folding>
+	</File>
+	<File name="src\usuarios.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="544" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="include\maestros.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

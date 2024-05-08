@@ -1,3 +1,6 @@
+
+//creado por Jose Gallardo 9959-23-106
+
 #include<iostream>
 #include<fstream>
 #include<stdlib.h>
@@ -8,12 +11,9 @@
 #include "maestros.h"
 
 using namespace std;
-//Creando CRUD jose Gallardo 9959-23-106 (menu, insertar, desplegar)
-//Creando CRUD Andre Gonzalez 9959-23-3117 (Modificar, Buscar, Borrar)
-
 
 maestros::maestros(string id, string nombre, string telefono, string DPI, string direccion, string Genero, string nacionalidad, string civil, string fechanaci, string anoingre)
-{//creado por Jose Gallardo 9959-23-106
+{
     this->id = id;
     this->nombre = nombre;
     this->telefono = telefono;
@@ -26,7 +26,6 @@ maestros::maestros(string id, string nombre, string telefono, string DPI, string
     this->anoingre = anoingre;
 }
 
-//sets y gets de datos maestros creado por Jose Gallardo 9959-23-106
 string maestros::setid(string id)
 {
     this->id = id;
@@ -194,7 +193,7 @@ void maestros::menu()
 		getch();
     }while(opcion != 6);
 }
-void maestros::insertar()//modificado por Jose Gallardo 9959-23-106
+void maestros::insertar()
 {
     system("cls");
     cout<<"+---------------------------------------------------------+"<< endl;
@@ -252,20 +251,20 @@ void maestros::insertar()//modificado por Jose Gallardo 9959-23-106
 
     cout<<"+---------------------------------------------------------+"<< endl;
 
-    ofstream archivo("Maestros.bin", ios::binary | ios::app);
+    ofstream archivo("Maestros.dat", ios::binary | ios::app);
     archivo.write(reinterpret_cast<const char*>(&maestro), sizeof(maestro));
     archivo.close();
     //-------------------------------------------------------------------------------------------------------------------
 
 }
-void maestros::desplegar()//modificado por Jose Gallardo 9959-23-106
+void maestros::desplegar()
 {
 	system("cls");
 
     cout << "+---------------------------------------------------------------------------------+" << endl;
     cout << "+                            Tabla de Detalles del Estudiante                     +" << endl;
     cout << "+---------------------------------------------------------------------------------+" << endl;
-    ifstream archivo("Maestros.bin", ios::binary | ios::app);
+    ifstream archivo("Maestros.dat", ios::binary | ios::app);
     if (!archivo) {
         cout << "Error, no se encuentra informacion...";
         return;
@@ -303,7 +302,7 @@ void maestros::modificar()
     cout << "+                       Modificar Detalles del maestros                           +" << endl;
     cout << "+---------------------------------------------------------------------------------+" << endl;
 
-    archivo.open("Maestros.bin", ios::binary | ios::in | ios::out);
+    archivo.open("Maestros.dat", ios::binary | ios::in | ios::out);
     if (!archivo) {
         cout << "Error, no se encuentra informacion...";
         return;
@@ -356,7 +355,6 @@ void maestros::modificar()
     cin.ignore();
     cin.get();
 }
-
 void maestros::borrar()
 {
     system("cls");
@@ -365,13 +363,13 @@ void maestros::borrar()
     cout<<"+                             Eliminar Maestros                                   +"<<endl;
     cout<<"+---------------------------------------------------------------------------------+"<<endl;
 
-    ifstream archivo("Maestros.bin", ios::binary);
+    ifstream archivo("Maestros.dat", ios::binary);
     if(!archivo)
     {
         cout<<"Error, no se encuentra informacion...";
         return;
     }
-    ofstream archivo2("Maestros2.bin", ios::binary);
+    ofstream archivo2("Maestros2.dat", ios::binary);
     Maestro maestro;
 
     cout<<"-> Ingrese el ID de la persona que desea eliminar: ";
@@ -393,8 +391,8 @@ void maestros::borrar()
 
         archivo.close();
         archivo2.close();
-        remove("Maestros.bin");
-        rename("Maestros2.bin","Maestros.bin");
+        remove("Maestros.dat");
+        rename("Maestros2.dat","Maestros.dat");
 
         if (resta)
         {
